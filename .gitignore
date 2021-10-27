@@ -1,0 +1,11 @@
+.DS_Store
+data/experiment/exp-*/
+data/parallel_experiment/exp-*/
+data/topology/B4/IP_topo_*/*.txt
+data/topology/B4/IP_topo_*/parallel_tickets
+!data/topology/B4/IP_topo_*/IP_topo_*.txt
+data/topology/IBM/IP_topo_*/*.txt
+data/topology/IBM/IP_topo_*/parallel_tickets
+!data/topology/IBM/IP_topo_*/IP_topo_*.txt
+*.log
+src/unittesting.jl

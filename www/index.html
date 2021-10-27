@@ -1,0 +1,215 @@
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<head>
+    <title>ARROW</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="images/csail.ico">
+    <script src="function.js"></script>
+    <script src="function2.js"></script>
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+</head>
+
+<body>
+    <header id="header">
+        <ul id="left-links">
+            <li class="link"><a href=""><b>ARROW: Agile RestoRation of Optical Wavelengths</b></a></li>
+        </ul>
+        <ul id="right-links">
+            <li class="link"><a href="#code">Artifact</a></li>
+            <li class="link"><a href="#talk">Talk</a></li>
+            <li class="link"><a href="#paper">Paper</a></li>
+        </ul>
+    </header>
+    <div class="section">
+        <div class="inner">
+            <div class="maintitle"><b>ARROW: Restoration-Aware Traffic Engineering</b></div>
+        </div>
+    </div>
+    <div class="section">
+        <div class="inner">
+            <div class="title">Overview</div>
+            <div class="body">
+                Fiber cut events reduce the capacity of wide-area networks (WANs) by several Tbps. In this paper, we
+                revive the lost capacity by reconfiguring the wavelengths from cut fibers into healthy fibers. We
+                highlight two challenges that made prior solutions impractical and propose a system called Arrow to
+                address them. First, our measurements show that contrary to common belief, in most cases, the lost
+                capacity is only partially restorable. This poses a cross-layer challenge from the Traffic Engineering
+                (TE) perspective that has not been considered before: "Which IP links should be restored and by how much
+                to best match the TE objective?" To address this challenge, Arrow's restoration-aware TE system takes a
+                set of partial restoration candidates (that we call LotteryTickets) as input and proactively finds the
+                best restoration plan. Second, prior work has not considered the reconfiguration latency of amplifiers.
+                However, in practical settings, amplifiers add tens of minutes of reconfiguration delay. To enable fast
+                and practical restoration, Arrow leverages optical noise loading and bypasses amplifier reconfiguration
+                altogether. We evaluate Arrow using large-scale simulations and a testbed. Our testbed demonstrates
+                Arrow's end-to-end restoration latency is eight seconds. Our large-scale simulations compare Arrow to
+                the state-of-the-art TE schemes and show it can support 2.0x-2.4x more demand without compromising
+                99.99% availability.<br />
+                <br />
+                ARROW is part of the <b>Reconfigurable Networks</b> project, check out more <a
+                    href="http://reconfignets.csail.mit.edu/" target="_blank">here</a>.
+            </div>
+        </div>
+    </div>
+    <div class="section">
+        <div class="inner">
+            <div class="title">Insights</div>
+            <div class="body">
+                <li>50% of fiber cut events last longer than <b>9 hours</b>, and 10% of them <b>last over a day</b>.
+                </li>
+                <li>Several Tbps network capacity is lost <b>only because</b> the cut fiber cannot carry light anymore,
+                    leaving the related routers ports and transponders sitting idle.</li>
+                <li>Contrary to common belief, in most cases, the lost capacity of fiber cut is only <b>partially
+                        restorable</b>, due to limited resources and wavelength continuity constraint on fibers.</li>
+                <li>Arrow tackles a new challenge posed by partial restoration: <b>Which IP links should be restored and
+                        by how much to best match the TE objective?</b></li>
+                <li>Reconfiguring 14 wavelengths from the cut fiber to surrogate fibers can be done <b>within 8
+                        seconds</b> in our wide-area network testbed.</li>
+                <li>Arrow is <b>production-ready</b> TE system, and can support <b>2.0x-2.4x more demand without
+                        compromising 99.99% availability</b>.</li>
+            </div>
+        </div>
+    </div>
+    <div class="section">
+        <div class="inner">
+            <div id="talk" class="title">Talk</div>
+            <div class="body">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/AoxCKilF3ok"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+            </div>
+        </div>
+        <div class="section">
+            <div class="inner">
+                <div id="code" class="title">Artifact</div>
+                <div class="body">
+                    <div class="code-type">
+                        <object class="icon" type="image/svg+xml" data="images/github.svg" style="height: 50px">
+                            Your browser does not support SVG
+                        </object>
+                        <span id="github-link">Code available: <a class="github-button"
+                                href="https://github.com/hipersys-team/arrow" data-show-count="true"
+                                aria-label="Star arrow-bow/bow on GitHub">arrow</a></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="section">
+            <div class="inner">
+                <div id="paper" class="title">Publication</div>
+                <div class="body">
+                    <b>ARROW: Restoration-Aware Traffic Engineering</b><br>
+                    Z. Zhong, M. Ghobadi, A. Khaddaj, J. Leach, Y. Xia, Y. Zhang<br>
+                    <em><a href="https://conferences.sigcomm.org/sigcomm/2021/">ACM SIGCOMM 2021</a></em><br>
+                    <a href="http://arrow.csail.mit.edu/files/2021_SIGCOMM_ARROW.pdf" target="_blank">Paper</a> |
+                    <a href="http://arrow.csail.mit.edu/files/arrow_slides_sigcomm_2021.pptx" target="_blank">Slides</a>
+                    |
+                    <a href="https://youtu.be/AoxCKilF3ok" target="_blank">Video</a> |
+                    <a href="#paper" onclick="showCitation(); return false;">BibTeX</a> |
+                    <a href="https://github.com/hipersys-team/arrow" target="_blank">Artifact</a> |
+                    <a href="https://news.mit.edu/2021/who-can-bend-light-cheaper-internet-0830" target="_blank">MIT
+                        News</a><br>
+                </div>
+                <div class="citation" id="citation">
+                    @inproceedings{zhong2021arrow,
+                    title={ARROW: restoration-aware traffic engineering},
+                    author={Zhong, Zhizhen and Ghobadi, Manya and Khaddaj, Alaa and Leach, Jonathan and Xia, Yiting and
+                    Zhang, Ying},
+                    booktitle={Proceedings of the 2021 ACM SIGCOMM 2021 Conference},
+                    pages={560--579},
+                    year={2021}
+                    }
+                </div>
+            </div>
+        </div>
+        <div class="section">
+            <div class="inner">
+                <div id="paper" class="title">Related Publications</div>
+                <div class="body">
+                    <b>BOW: First Real-World Demonstration of a Bayesian Optimization System for Wavelength
+                        Reconfiguration</b><br>
+                    Z. Zhong, M. Ghobadi, M. Balandat, S. Katti, A. Kazerouni, J. Leach, M. McKillop, Y. Zhang<br>
+                    <em><a href="">OFC 2021</a></em><br>
+                    <font color="red"><b>Postdeadline Paper</b></font><br>
+                    <a href="http://bow.csail.mit.edu/" target="_blank"><b>BOW Project Page</b></a> |
+                    <a href="https://people.csail.mit.edu/ghobadi/papers/bow_ofc_2021.pdf" target="_blank">Paper</a> |
+                    <a href="https://people.csail.mit.edu/ghobadi/slides/bow_slides_ofc_2021.pptx"
+                        target="_blank">Slides</a> |
+                    <a href="https://www.osapublishing.org/abstract.cfm?uri=OFC-2021-F3B.1#videoPlayer"
+                        target="_blank">Video</a> |
+                    <a href="#paper" onclick="showCitation2(); return false;">BibTeX</a> |
+                    <a href="https://github.com/hipersys-team/bow" target="_blank">Artifact</a><br>
+                </div>
+                <div class="citation" id="citation2">
+                    @inproceedings{zhong2021bow,
+                    title={BOW: First Real-World Demonstration of a Bayesian Optimization System for Wavelength
+                    Reconfiguration},
+                    author={Zhong, Zhizhen and Ghobadi, Manya and Balandat, Maximilian and Katti, Sanjeevkumar and
+                    Kazerouni, Abbas and Leach, Jonathan and McKillop, Mark and Zhang, Ying},
+                    booktitle={Optical Fiber Communication Conference},
+                    pages={F3B--1},
+                    year={2021},
+                    organization={Optical Society of America}
+                    }
+                </div>
+            </div>
+        </div>
+        <div class="section">
+            <div class="inner">
+                <div id="paper" class="title">Press Coverage</div>
+                <div class="body">
+                    <a href="https://cacm.acm.org/news/255145-who-can-bend-light-for-cheaper-internet/fulltext"
+                        target="_blank">ACM TechNews</a> |
+                    <a href="https://techxplore.com/news/2021-08-cheaper-internet.html" target="_blank">TechXplore</a> |
+                    <a href="https://news.mit.edu/2021/who-can-bend-light-cheaper-internet-0830" target="_blank">MIT
+                        News</a> |
+                    <a href="https://www.csail.mit.edu/news/who-can-bend-light-cheaper-internet" target="_blank">MIT
+                        CSAIL News</a>
+                </div>
+            </div>
+            <div class="section">
+                <div class="inner">
+                    <div class="title">Contributors</div>
+                    <div class="affiliation">
+                        <object class="logo" type="image/svg+xml" data="images/mit.svg" style="height:70px">
+                            Your browser does not support SVG
+                        </object>
+                        <ul class="names">
+                            <li><a href="http://people.csail.mit.edu/zhizhenzhong/" target="_blank">Zhizhen Zhong</a>
+                            </li>
+                            <li><a href="http://people.csail.mit.edu/ghobadi/" target="_blank">Manya Ghobadi</a></li>
+                            <li><a href="https://scholar.google.com/citations?user=BA1kFjMAAAAJ&hl=en&oi=ao"
+                                    target="_blank">Alaa Khaddaj</a></li>
+                        </ul>
+                    </div>
+                    <div class="affiliation">
+                        <object class="logo" type="image/svg+xml" data="images/Facebook.svg" style="height:70px">
+                            Your browser does not support SVG
+                        </object>
+                        <ul class="names">
+                            <li><a href="https://www.linkedin.com/in/jonathan-leach-438a2b36/" target="_blank">Jonathan
+                                    Leach</a></li>
+                            <li><a href="https://research.fb.com/people/zhang-ying/" target="_blank">Ying Zhang</a></li>
+                        </ul>
+                    </div>
+                    <div class="affiliation">
+                        <object class="logo" type="image/svg+xml" data="images/mpi.svg" style="height:75px">
+                            Your browser does not support SVG
+                        </object>
+                        <ul class="names">
+                            <li><a href="https://sites.google.com/view/yitingxia/" target="_blank">Yiting Xia</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="section">
+                <div class="inner">
+                    <div class="title"><a href="https://accessibility.mit.edu/" target="_blank">Accessibility</a></div>
+                    <script type="text/javascript" id="clustrmaps"
+                        src="//cdn.clustrmaps.com/map_v2.js?cl=ffffff&w=200&t=tt&d=b4M0taEsMWbHOuQu0BwzXw5RMT3H3ybWkdDLCQw4D_c"></script>
+                </div>
+            </div>
+            <footer>
+            </footer>
+</body>
